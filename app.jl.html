@@ -1,0 +1,61 @@
+
+<div class="row">
+    <header> 
+        <h1> Markovian Password Generator:</h1>
+    </header>
+</div>
+<div class="row">
+    <div class="col col-12 col-sm st-module">
+        <h2 v-text="Display_text"></h2>
+    </div>
+    <button v-on:click="start = !start">Generate</button>
+</div>
+<div class="row">
+    <div class="col col-12 col-sm st-module">
+        <h6>Password Length</h6>
+        <q-input label="" v-model="M_length_num"  style="margin-top:-10%"></q-input>
+    </div>
+    <div class="col col-12 col-sm st-module">
+        <h6>Seed Input</h6>
+        <q-input label="" v-model="Seed_Number"  style="margin-top:-10%"></q-input>
+    </div>
+    <div class="col">
+    <q-uploader
+    style="max-width: 300px"
+    url="http://localhost:8000/"
+    label="Upload Text File (.txt)"
+    max-files="1"
+    accept=".txt"
+    method="POST"
+    field__name="txt_file"
+  />
+</div>
+  <div class="col">
+  <q-uploader
+    style="max-width: 300px"
+    url="http://localhost:8000/"
+    label="Upload Image (Optional) (.png, .jpg)"
+    max-files="1"
+    accept=".jpg, .png, image/*"
+    method="POST"
+    field__name="img_file"
+  /> 
+</div>
+</div>
+<div class="row">
+    <div class="col-sm"> 
+        <button v-on:click="clear = !clear">Clear</button> 
+    </div>
+</div>
+<div class="row">
+    <div class="col st-module">
+        <h4>How does this work?</h4> 
+        <p>1. This password generator lets you turn a text file and a number of your choice into a unique password. You can customise the length of this password, and you have the option to
+              add an image to the generator that will randomise it further. <br><br>
+           2. The password generated relies on these inputs, so it will always be the same if the inputs are the same. This allows you to create long and complex passwords while only having
+              to remember a small number of input variables.<br><br>
+           3. If you don't have any text files, there are several online libraries such as <a href="https://www.gutenberg.org/">Project Gutenberg</a> where you can download books. You can also 
+              convert <a href="https://convertio.co/doc-txt/">Word Documents</a> or <a href="https://pdftotext.com/">PDFs</a> to .txt files online.</p>
+    </div>
+</div>
+
