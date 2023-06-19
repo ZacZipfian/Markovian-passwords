@@ -28,17 +28,19 @@
     accept=".txt"
     method="POST"
     field__name="txt_file"
+    v-on:uploaded="function(event) { handle_event(event, 'uploaded') }"    
   />
 </div>
   <div class="col">
   <q-uploader
     style="max-width: 300px"
-    url="http://localhost:8000/"
+    url="/upload"
     label="Upload Image (Optional) (.png, .jpg)"
     max-files="1"
     accept=".jpg, .png, image/*"
     method="POST"
     field__name="img_file"
+    v-on:uploaded="function(event) { handle_event(event, 'uploaded') }"  
   /> 
 </div>
 </div>
